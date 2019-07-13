@@ -1,8 +1,8 @@
 # AutomataProject
 # By
-## Carlos Leon
-## Autumn Chavez
-## Logan Lopez
+- Carlos Leon 
+- Autumn Chavez
+- Logan Lopez
 
 ### Dependencies
 Requires npm, electron
