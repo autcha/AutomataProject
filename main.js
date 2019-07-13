@@ -5,15 +5,16 @@ let win;
 
 function createWindow(){
   win = new BrowserWindow({
-    width: 1000,
-    height: 1000,
+    width: 1280,
+    height: 760,
     webPreferences:{
       nodeIntegration: true
     }
   });
+  win.setMenu(null);
   //win.loadFile(__dirname + 'index.html');
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'pages/index.html'),
     protocol: 'file:',
     slashes: true
   }));
