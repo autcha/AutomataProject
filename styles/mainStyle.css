@@ -1,0 +1,81 @@
+body {
+    background: url(https://wallpaperplay.com/walls/full/2/9/e/106443.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    
+}
+h1, h2, th, button, input {
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    font-weight: lighter;
+}
+h2, th{
+    font-size: 20px;
+}
+div, table {
+    
+	left: 0;
+    right: 0; 
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+}
+#container {
+    padding: 40px;
+    top:0;
+	bottom: 0;
+    background: linear-gradient(to bottom, #0f1a27d8, #202e43d8, #2c3b64d8);
+    position: absolute;
+}
+table{
+    padding: 10px;
+    text-align: center;
+}
+th{
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+  }
+#link:hover {background-color: #202e43d8;}
+a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+a:hover{
+    color:rgba(83, 205, 253, 0.836)
+}
+button{
+    outline: none;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    padding:10px;
+    border-radius: 10px;
+    box-shadow: 0 8px #162650
+}
+button:hover{
+    color:rgba(255, 255, 255, 1);
+    border:1px solid rgba(255, 255, 255, 1);
+    
+}
+button:active {
+    box-shadow: 0 5px #060b16;
+    transform: translateY(4px);
+  }
+input {
+    outline: none;
+    width: 200px;
+    text-align: left;
+    border: none;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    padding: 10px;
+}
+      
+
