@@ -5,6 +5,12 @@
 	when the Ben Shapiro DNA computer is chosen.
 */
 
+let state = "TRANSITION"
+let input_w = "";
+let input_w_x  = 0;
+let input_w_y = 0;
+const SIZE = 25;
+
 
 function start_automaton(){
 	draw_two_state_canvas();
@@ -34,7 +40,6 @@ function validate_alphabet(e){
 	}
 }
 
-let state = "TRANSITION"
 
 function show_transition_canvas(){
 	if (document.getElementById("test").value.length == 0) {
@@ -56,6 +61,8 @@ function show_transition_canvas(){
 
 function show_splitting_canvas(){
 	// Move to the next container
+	document.getElementById("state2").style.display = "none";
+	document.getElementById("state3").style.display = "block";
 	let h4 = document.getElementsByClassName("comp_desc")[0];
 	h4.innerText = `FokI will split remove the first input word.`;
 	draw_start_cutting();
@@ -63,21 +70,42 @@ function show_splitting_canvas(){
 }
 
 function draw_start_cutting(){
+	// Set the header
+	let h4 = document.getElementsByClassName("comp_desc")[0];
+	h4.innerText = `.`;
+	
 	// Draw the cutting action
+	init_cutting();
+
+	setTimeout(() => {
+		start_cutting(); 
+	}, 1000);
+}
+
+function init_cutting(){
+	// Show the input string
+
+	// Show the transitions on the left
+}
+
+function start_cutting(){
+
 }
 
 function show_encode_canvas(){
 	let h4 = document.getElementsByClassName("comp_desc")[0];
 	h4.innerText = `The String must then be encoded into a DNA representation of it. The rules are simple. First, the desire starting state and first input variable must be chosen. Then a spacer of GCC is placed. Then the second input letter, then a spacer, then the third etc. Finaly a terminator is placed.`;
+	input_w = document.getElementById('test').value;
+	input_w_x = 10;
+	input_w_y = canvas.height / 2 - 15;
 	draw_encoded_string();
 	state = "ENCODE";
 }
 
-const SIZE = 25;
 
 function draw_encoded_string(){
 	// Draw the series of boxes representing a string in DNA form
-	let input_string = document.getElementById('test').value;
+	let input_string = input_w;
 	let top_row = "";
 	let bottom_row = "";
 	let spacer_top = "GCC";
@@ -118,15 +146,15 @@ function draw_encoded_string(){
 	ctx.lineWidth = 2;
 
 
-	let x = 10;
-	let y = canvas.height / 2 - 15;
+	let x = input_w_x;
+	let y = input_w_y;
 	for(let w of top_row){
 		draw_square(ctx, x, y, w);
 		x += SIZE;
 	}
 
-	x = 10 + (SIZE * 4);
-	y = canvas.height / 2 - 15 + SIZE;
+	x = input_w_x + (SIZE * 4);
+	y = input_w_y + SIZE;
 	for(let w of bottom_row){
 		draw_square(ctx, x, y, w);
 		x += SIZE;
