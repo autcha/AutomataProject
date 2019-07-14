@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="375.32244"
+     inkscape:cx="289.9653"
      inkscape:cy="-40.66499"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -56,7 +56,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -348,18 +348,6 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:31.67986488px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="58.317741"
-       y="89.072006"
-       id="text4308"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4310"
-         x="58.317741"
-         y="89.072006"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O'">T4:</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:31.67986488px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="446.95953"
        y="191.82274"
        id="text4186-3-9"
@@ -404,19 +392,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:31.67986488px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="110.39746"
+       x="57.996429"
        y="89.906288"
        id="text4382"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="110.39746"
+         x="57.996429"
          y="89.906288"
          id="tspan4386"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Italic'">S<tspan
-   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.59191132px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Italic';baseline-shift:sub"
-   id="tspan4390">0</tspan>  → S<tspan
-   style="font-size:64.99999762%;baseline-shift:sub"
-   id="tspan4447">1</tspan></tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Italic'">A  → B</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.67986488px;line-height:125%;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -461,18 +445,6 @@
          id="tspan4410"
          x="629.26025"
          y="190.88429">5'</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="162.85715"
-       y="73.076492"
-       id="text4412"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4414"
-         x="162.85715"
-         y="73.076492"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Italic'">b</tspan></text>
     <rect
        y="109.65089"
        x="388.18405"
