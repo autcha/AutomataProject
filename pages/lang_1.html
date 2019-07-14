@@ -27,7 +27,7 @@
                 </div>
         </div>
         <div id="state2" style="display: none">
-                <div class="row">
+                <div class="row" id='transitions'>
                     <div class="column" style="color: white">
                       <h2 style="text-align: center">Symbols</h2>
                         $$ a \rightarrow TGGCT \\
@@ -46,8 +46,8 @@
                       <img src="../diagrams/shapiro_t4.svg" width="500" /><br />
                       <img src="../diagrams/shapiro_t5.svg" width="500" /><br />
                     </div>
-                    <!-- <canvas id="two_state_2" width="1200" height="400"></canvas> -->
                 </div>
+                <canvas style="display: none" id="two_state_2" width="1200" height="400"></canvas>
                 <!--Input area div-->
                 <div>
                     <button id="cotninue_btn">Continue</button>  
@@ -57,7 +57,11 @@
                 <div>
                     <!--Canvas for state-->
                     <div id="possible_trans">
-                        Place transactions here
+                    <div class="row">
+                      <img src="../diagrams/shapiro_t3.svg" width="300" height="100" class='normal' /><br />
+                      <img src="../diagrams/shapiro_t4.svg" width="300" height="100" class='normal' /><br />
+                      <img src="../diagrams/shapiro_t5.svg" width="300" height="100" class='normal' /><br />
+                    </div>
                     </div>
                     <canvas id="two_state_3" width="1000" height="400"></canvas>
                 </div>

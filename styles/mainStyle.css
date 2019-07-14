@@ -124,7 +124,7 @@ input {
 }
 
 .select{
-    border: 2px solid salmon;
+    border: 3px solid salmon;
 }
 
 .row {
@@ -133,4 +133,12 @@ input {
 
 .column {
     flex: 50%;
+}
+
+.normal{
+    border: 3px solid #cfb297;
+}
+
+.selected_trans{
+    border: 3px solid #cc8e2a;
 }

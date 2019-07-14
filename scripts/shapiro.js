@@ -89,12 +89,24 @@ function init_cutting(){
 	let canvas = document.getElementById("two_state_3");
 	let ctx = canvas.getContext("2d");
 	draw_just_input_string(ctx, top_row, bottom_row);
-
-	// Show the transitions on top
 }
 
 function start_cutting(){
+	// Get transition
 
+	// If no transition
+		// Mark unaccpeted
+
+	// First combine the transition with the input string
+
+	// Draw the FokI enxyme and the locations of its cut
+
+	// Display the new cut input string
+
+	// If the remaining input string is the terminator
+		// Mark Accepted
+	// else
+		// Mark unaccepted
 }
 
 function show_encode_canvas(){
@@ -145,7 +157,10 @@ function draw_encoded_string(){
 	bottom_row += terminator_bottom;
 
 	// Draw them on the canvas
+	let trans_ctn = document.getElementById("transitions");
+	trans_ctn.style.display = "none";
 	let canvas = document.getElementById("two_state_2");
+	canvas.style.display = "block"
 	let ctx = canvas.getContext("2d");
 	draw_just_input_string(ctx, top_row, bottom_row);
 
