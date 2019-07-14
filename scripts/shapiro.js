@@ -97,7 +97,7 @@ function show_encode_canvas(){
 	h4.innerText = `The String must then be encoded into a DNA representation of it. The rules are simple. First, the desire starting state and first input variable must be chosen. Then a spacer of GCC is placed. Then the second input letter, then a spacer, then the third etc. Finaly a terminator is placed.`;
 	input_w = document.getElementById('test').value;
 	input_w_x = 10;
-	input_w_y = canvas.height / 2 - 15;
+	input_w_y = 500 / 2 - 15;
 	draw_encoded_string();
 	state = "ENCODE";
 }
@@ -144,7 +144,6 @@ function draw_encoded_string(){
 	let ctx = canvas.getContext("2d");
 	ctx.strokeStyle = 'salmon';
 	ctx.lineWidth = 2;
-
 
 	let x = input_w_x;
 	let y = input_w_y;
