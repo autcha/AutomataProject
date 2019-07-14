@@ -25,6 +25,7 @@ div, table {
     width: fit-content;
     height: fit-content;
     padding: 10px;
+    text-align: center;
 }
 #container {
     padding: 40px;

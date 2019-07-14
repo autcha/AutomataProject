@@ -13,16 +13,27 @@
     <div id="container">
         <button id='home_btn'>Home</button>
         <h1>Automata & DNA Computing</h1>
-        <h4 class="comp_desc">The Ben Shapiro engine is a two state finate state machine. The automaton accepts x in {a, b}*. The possible encoding of a and b are predetermined as so are the 8 possible transition rules between two states in a finite state machine. The DNA computer relies on 2 enzymes: <i>Ligase</i> and <i>FokI</i>. The first is responsible for movinf to the input word and the second to ligate (split) the DNA.</h2>
-        <div>
+        <h4 class="comp_desc">The Ben Shapiro engine is a two state finate state machine. The automaton accepts x in {a, b}*. There are 8  possible encoding of a and b and the 8 possible transition rules are predetermined sequences of DNA. The DNA computer relies on 2 enzymes: <i>Ligase</i> and <i>FokI</i>. The first is responsible for movinf to the input word and the second to ligate (split) the DNA.</h2>
+        <div id="state1">
                 <div>
                     <!--Canvas for state-->
                     <canvas id="two_state" width="400" height="300"></canvas>
                 </div>
                 <!--Input area div-->
                 <div>
+                    <h4 id="info_ctn">The alphabet is {a, b}* and accepted strings are in the form (b + ba)*</h4>
                     <input id='test' type="text" placeholder="Enter an Input String">
-                    <button>Test</button>  
+                    <button id="test_btn">Test</button>  
+                </div>
+        </div>
+        <div id="state2" style="display: none">
+                <div>
+                    <!--Canvas for state-->
+                    <canvas id="two_state_2" width="400" height="300"></canvas>
+                </div>
+                <!--Input area div-->
+                <div>
+                    <button id="cotninue_btn">Continue</button>  
                 </div>
         </div>
     </div>
