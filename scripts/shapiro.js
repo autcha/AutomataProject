@@ -219,24 +219,38 @@ function draw_two_state_canvas(){
 	canvas_arrow(ctx, 
 		offset + (state_radius * 2) - 10,
 		canvas.height / 2 - 25,
-		canvas.width / 2 + offset + 5,
+		canvas.width / 2 + offset + 10,
 		canvas.height / 2 - 25);
 	canvas_arrow(ctx, 
 		canvas.width / 2 + offset + 10,
 		canvas.height / 2 + 25,
-		offset + (state_radius * 2) - 5,
+		offset + (state_radius * 2) -10 ,
 		canvas.height / 2 + 25);
 	ctx.stroke();
 	ctx.beginPath();
-	ctx.arc(offset,
-  			canvas.height / 2,
-  			state_radius / 1.5,
-  			2 * Math.PI - Math.PI / 2.7, Math.PI / 2.7, true);
+	ctx.arc(offset -10,
+  			canvas.height / 2 ,
+  			state_radius / 1.5 + 5,
+  			2 * Math.PI - Math.PI / 2.7 + .25, Math.PI / 2.7 - .25, true);
 	let lastX = offset + (state_radius / 1.5)*Math.cos(2 * Math.PI - Math.PI / 2.7);
 	let lastY = canvas.height / 2 + (state_radius / 1.5)*Math.sin(2 * Math.PI - Math.PI / 2.7);  
 	lastY += 2 * (state_radius / 1.5);
-	ctx.lineTo(lastX - 10 * Math.cos(Math.PI / 6), lastY - 10 * Math.sin(Math.PI / 6));
-  	ctx.moveTo(lastX, lastY);
-  	ctx.lineTo(lastX - 10 * Math.cos(Math.PI / 6), lastY - 10 * Math.sin(Math.PI / 6));
+	ctx.lineTo(lastX - 10 * Math.cos(Math.PI / 6), lastY - 10 * Math.sin(Math.PI / 6) );
+  	ctx.moveTo(lastX -2 , lastY -2);
+  	ctx.lineTo(lastX -2, lastY + 5);
 	ctx.stroke();
+
+	//Add in transition text
+	ctx.fillStyle = 'salmon';
+	//transition 1 (A -> A)
+	var posx = offset - 60;
+	var posy = canvas.height /2;
+	ctx.fillText("b", posx, posy);
+	//transition 2 (A -> B)
+	posx =((offset + (state_radius * 2) - 10) +(canvas.width / 2 + offset + 10))/2
+	posy =((canvas.height / 2 - 25) + (canvas.height / 2 - 25))/2 - 20;
+	ctx.fillText("b", posx, posy);
+	//transition 2 (B -> A)
+	posy =((canvas.height / 2 - 25) + (canvas.height / 2 - 25))/2 + 80;
+	ctx.fillText("a",posx, posy);
 }
