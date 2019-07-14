@@ -12,7 +12,7 @@ function createWindow(){
     }
   });
   win.setMenu(null);
-  //win.loadFile(__dirname + 'index.html');
+  win.webContents.openDevTools();
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'pages/index.html'),
     protocol: 'file:',

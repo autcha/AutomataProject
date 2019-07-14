@@ -24,7 +24,6 @@ div, table {
     margin: auto;
     width: fit-content;
     height: fit-content;
-    border-radius: 10px;
     padding: 10px;
 }
 #container {
@@ -43,13 +42,27 @@ th{
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.75);
   }
-#link:hover {background-color: #202e43d8;}
-a {
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
+.subtitle{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    padding-bottom: 15px;
 }
-a:hover{
-    color:rgba(83, 205, 253, 0.836)
+#link:hover {background-color: #202e43d8;}
+.lang_link {
+    color: rgba(83, 205, 253, 0.836);
+    text-decoration: none;
+    transition: 0.15s all ease;
+}
+.lang_link:hover{
+    font-size: 1.3em;
+    color: rgba(90, 150, 60, 0.836);
+}
+.lang_list{
+    list-style: none;
+    padding-left: 0;
+    min-height: 80px;
+}
+.dna_comp{
+    border-bottom: none;
 }
 button{
     outline: none;
