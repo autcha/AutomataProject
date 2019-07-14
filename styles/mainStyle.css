@@ -7,7 +7,7 @@ body {
     
     
 }
-h1, h2, th, button, input {
+h1, h2, h3, h4, th, button, input {
     outline: none;
     font-family: 'Courier New', Courier, monospace;
     color: rgba(255, 255, 255, 0.75);
@@ -64,6 +64,10 @@ th{
 .dna_comp{
     border-bottom: none;
 }
+.comp_desc{
+    font-weight: 400;
+    margin: 0 10%;
+}
 button{
     outline: none;
     background: none;
@@ -80,7 +84,10 @@ button:hover{
 button:active {
     box-shadow: 0 5px #060b16;
     transform: translateY(4px);
-  }
+}
+#home_btn{
+    float: left;
+}
 input {
     outline: none;
     width: 200px;

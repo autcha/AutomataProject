@@ -1,11 +1,13 @@
 # AutomataProject
-# By
+# Authors
 - Carlos Leon 
 - Autumn Chavez
 - Logan Lopez
 
 ### Dependencies
-Requires npm, electron
+Requires npm, node.js, electron
+To install dependencies, run command in project root
+`npm install`
 
 ### To run/compile
 Run command in project root
