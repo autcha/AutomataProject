@@ -17,7 +17,6 @@ function start_automaton(){
 
 function validate_alphabet(e){
 	// allow only a and b keys and to lower all
-	console.log(e);
 	switch(e.code){
 		case "ShiftLeft":
 		case "ShiftRight":
@@ -74,8 +73,72 @@ function show_encode_canvas(){
 	state = "ENCODE";
 }
 
+const SIZE = 25;
+
 function draw_encoded_string(){
 	// Draw the series of boxes representing a string in DNA form
+	let input_string = document.getElementById('test').value;
+	let top_row = "";
+	let bottom_row = "";
+	let spacer_top = "GCC";
+	let spacer_bottom = "CGG";
+	let terminator_top = "GTCGG";
+	let terminator_bottom = "CAGCC";
+
+	if(input_string[0] === 'a'){
+		top_row += "GGCT";
+	}else{
+		top_row += "CAGG";
+	}
+	top_row += spacer_top;
+	bottom_row += spacer_bottom;
+	input_string = input_string.substring(0, input_string.length -1 );
+
+	for(let w of input_string){
+		if(w === 'a'){
+			// Add a
+			top_row += "TGGCT";
+			bottom_row += "ACCGA";
+		}else{
+			// Add b
+			top_row += "GCAGG";
+			bottom_row += "CGTCC";
+		}
+		top_row += spacer_top;
+		bottom_row += spacer_bottom;
+	}
+
+	top_row += terminator_top;
+	bottom_row += terminator_bottom;
+
+	// Draw them on the canvas
+	let canvas = document.getElementById("two_state_2");
+	let ctx = canvas.getContext("2d");
+	ctx.strokeStyle = 'salmon';
+	ctx.lineWidth = 2;
+
+
+	let x = 10;
+	let y = canvas.height / 2 - 15;
+	for(let w of top_row){
+		draw_square(ctx, x, y, w);
+		x += SIZE;
+	}
+
+	x = 10 + (SIZE * 4);
+	y = canvas.height / 2 - 15 + SIZE;
+	for(let w of bottom_row){
+		draw_square(ctx, x, y, w);
+		x += SIZE;
+	}
+
+}
+
+function draw_square(ctx, x, y, letter){
+	ctx.strokeRect(x, y, SIZE, SIZE);
+	ctx.font = "20px 'Courier New', Courier, monospace";
+	ctx.fillStyle = '#7cff4d';
+	ctx.fillText(letter, x + 5, y + 20);
 }
 
 function draw_transition_encoding(){
