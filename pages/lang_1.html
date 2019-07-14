@@ -27,9 +27,26 @@
                 </div>
         </div>
         <div id="state2" style="display: none">
-                <div>
-                    <!--Canvas for state-->
-                    <canvas id="two_state_2" width="1000" height="400"></canvas>
+                <div class="row">
+                    <div class="column" style="color: white">
+                      <h2 style="text-align: center">Symbols</h2>
+                        $$ a \rightarrow TGGCT \\
+                        b \rightarrow GCAGG \\
+                        \langle S_{0} , a \rangle \rightarrow GGCT \\
+                        \langle S_{0} , b \rangle \rightarrow CAGG \\
+                        \langle S_{1} , a \rangle \rightarrow TGGC\\
+                        \langle S_{1}, b \rangle \rightarrow GCAG $$
+                        <h2 style="text-align: center">Terminator</h2>
+                        $$ t \rightarrow GTCGG \\
+                        \langle S_{0} , t \rangle \rightarrow TCGG \\
+                        \langle S_{1} , t \rangle \rightarrow GTCG $$
+                      </div>
+                     <div class="column">
+                      <img src="../diagrams/shapiro_t3.svg" width="500" /><br />
+                      <img src="../diagrams/shapiro_t4.svg" width="500" /><br />
+                      <img src="../diagrams/shapiro_t5.svg" width="500" /><br />
+                    </div>
+                    <!-- <canvas id="two_state_2" width="1200" height="400"></canvas> -->
                 </div>
                 <!--Input area div-->
                 <div>
