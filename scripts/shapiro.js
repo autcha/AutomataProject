@@ -12,6 +12,9 @@ let input_w_y = 0;
 let bottom_row = ""
 let top_row = "";
 let SIZE = 25;
+let interval = null;
+let result = "continue";
+let current_transition = "";
 
 
 function start_automaton(){
@@ -51,7 +54,6 @@ function show_transition_canvas(){
 	document.getElementById("state1").style.display = "none";
 	document.getElementById("state2").style.display = "block";
 	show_transition_encoding();
-	draw_transition_encoding();
 	document.getElementById('cotninue_btn').addEventListener('click', () => {
 		if(state === "TRANSITION"){
 			show_encode_canvas();
@@ -79,9 +81,17 @@ function draw_start_cutting(){
 	// Draw the cutting action
 	init_cutting();
 
-	setTimeout(() => {
-		start_cutting(); 
-	}, 1000);
+	interval = setInterval(() => {
+		if(result === "continue"){
+			start_cutting(); 
+		}else if( result === "accepted"){
+			mark_accepted();
+			clearInterval(interval);
+		}else if(result === "rejected"){
+			mark_rejected();
+			clearInterval(interval);
+		}
+	}, 2000);
 }
 
 function init_cutting(){
@@ -89,24 +99,133 @@ function init_cutting(){
 	let canvas = document.getElementById("two_state_3");
 	let ctx = canvas.getContext("2d");
 	draw_just_input_string(ctx, top_row, bottom_row);
+	bottom_row = bottom_row.split("");
+	top_row = top_row.split("");
+}
+
+function mark_accepted(){
+	let circle = document.getElementsByClassName("circle")[0];
+	circle.classList.add("select");
+	circle.style.background_color = "#5ad47a";
+}
+
+function mark_rejected(){
+	let circle = document.getElementsByClassName("circle")[1];
+	circle.classList.add("select");
+	circle.style.background_color = "#d14f5a";
 }
 
 function start_cutting(){
 	// Get transition
+	set_transition();
 
 	// If no transition
-		// Mark unaccpeted
+		// return
+	if(current_transition.length === 0){
+		evaluate_state();
+		return;
+	}
 
 	// First combine the transition with the input string
+	let temp_words = get_combined_words();
+
+	// Draw the combined words
+	draw_combined_words(temp_words);
+	result = "rejected";
+	return; // TEST
 
 	// Draw the FokI enxyme and the locations of its cut
+	draw_fokl_enzyme(temp_words);
 
 	// Display the new cut input string
+}
 
-	// If the remaining input string is the terminator
-		// Mark Accepted
-	// else
-		// Mark unaccepted
+function draw_fokl_enzyme(words){
+	// Draw block below
+}
+
+function get_combined_words(){
+	if(current_transition === 'a'){
+		let temp1 = "GGATG" + top_row.join("");
+		let temp2 = "CCTACACCG" + bottom_row.join("");
+		return [[temp1, temp2]];
+	}
+	else{
+		let temp1 = "GGATGCC" + top_row.join("");
+		let temp2 = "CCTACGGGTCC" + bottom_row.join("");
+		let temp3 = "GGATGC" + top_row.join("");
+		let temp4 = "CCTACGGTCC" + bottom_row.join("");
+		return [[temp1, temp2], [temp3, temp4]];
+	}
+}
+
+function draw_combined_words(words){
+	let canvas = document.getElementById("two_state_3");
+	let ctx = canvas.getContext("2d");
+	let draw_state = 2;
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.strokeStyle = 'salmon';
+	ctx.lineWidth = 2;
+
+	let iter = 0;
+	for(let word of words){
+		let x = 20;
+		let y = (words.length  == 1 ? canvas.height / 2 : canvas.height / 3); 
+		if(iter == 1){
+			y += 50;
+		}
+		else{
+			iter++;
+		}
+		
+		x = 20;
+		for(let w of word[0]){
+			draw_square(ctx, x, y, w, draw_state);
+			x += SIZE;
+		}
+
+		x = 20;
+		y += SIZE;
+		for(let w of word[1]){
+			draw_square(ctx, x, y, w, draw_state);
+			x += SIZE;
+		}
+	}
+}
+
+function evaluate_state(){
+	if(bottom_row.length === 0 && top_row.length == 4){
+		if(top_row === "TCGG"){
+			result = "accepted";
+		}else{
+			result = "rejected";
+		}
+	}
+	else{
+		result = "continue";
+	}
+}
+
+function set_transition(){
+	let relavent = top_row.slice(0, 4).join("");
+	top_row.shift();
+	top_row.shift();
+	top_row.shift();
+	top_row.shift();
+	switch(relavent){
+		case "CAGG":
+			current_transition = 'b';
+			document.getElementById("trans1").classList.toggle("selected_trans", true);
+			document.getElementById("trans2").classList.toggle("selected_trans", true);
+			document.getElementById("trans3").classList.toggle("selected_trans", false);
+			break;
+		case "TGGC":
+			current_transition = 'a';
+			document.getElementById("trans1").classList.toggle("selected_trans", false);
+			document.getElementById("trans2").classList.toggle("selected_trans", false);
+			document.getElementById("trans3").classList.toggle("selected_trans", true);
+			break;
+	}
 }
 
 function show_encode_canvas(){
@@ -223,10 +342,6 @@ function draw_square(ctx, x, y, letter, state){
 	ctx.strokeRect(x, y, SIZE, SIZE);
 	ctx.font = `${SIZE - 5}px 'Courier New', Courier, monospace`;
 	ctx.fillText(letter, x + (SIZE / 6), y + SIZE - 5);
-}
-
-function draw_transition_encoding(){
-	// Draw the transitions in the DNA molecule form
 }
 
 function show_transition_encoding(){
