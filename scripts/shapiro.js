@@ -15,7 +15,7 @@ let SIZE = 25;
 let interval = null;
 let result = "continue";
 let current_transition = "";
-let found_good = false;
+let found_good = true;
 
 function start_automaton(){
 	draw_two_state_canvas();
@@ -121,7 +121,8 @@ function start_cutting(){
 
 	// If no transition
 		// return
-	if(current_transition.length === 0){
+
+	if(!found_good || current_transition.length === 0){
 		evaluate_state();
 		return;
 	}
@@ -336,7 +337,11 @@ function evaluate_state(){
 		if(current_transition.length == 0){
 			result = "rejected";
 		}else{
-			result = "continue";
+			if(!found_good){
+				result = "rejected";
+			}else{
+				result = "continue";
+			}
 		}
 	}
 }
