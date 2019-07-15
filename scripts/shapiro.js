@@ -69,7 +69,7 @@ function show_splitting_canvas(){
 	document.getElementById("state2").style.display = "none";
 	document.getElementById("state3").style.display = "block";
 	let h4 = document.getElementsByClassName("comp_desc")[0];
-	h4.innerText = `FokI will split remove the first input word.`;
+	h4.innerText = `FokI will split remove the first input word. Please press continue twice in the final iteration`;
 	draw_start_cutting();
 	state = "SPLIT";
 }
