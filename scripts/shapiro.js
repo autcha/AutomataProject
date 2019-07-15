@@ -363,7 +363,7 @@ function set_transition(){
 
 function show_encode_canvas(){
 	let h4 = document.getElementsByClassName("comp_desc")[0];
-	h4.innerText = `The String must then be encoded into a DNA representation of it. The rules are simple. First, the desire starting state and first input variable must be chosen. Then a spacer of GCC is placed. Then the second input letter, then a spacer, then the third etc. Finaly a terminator is placed.`;
+	h4.innerText = `The String must then be encoded into a DNA representation of it. The rules are simple. First, the desire starting state and first input variable must be chosen. Then a spacer of GCC is placed. Then the second input letter, then a spacer, then the third etc. Finally a terminator is placed.`;
 	input_w = document.getElementById('test').value;
 	input_w_x = 10;
 	input_w_y = 500 / 2 - 15;
@@ -479,7 +479,7 @@ function draw_square(ctx, x, y, letter, state){
 
 function show_transition_encoding(){
 	let h4 = document.getElementsByClassName("comp_desc")[0];
-	h4.innerText = `The FSM has 8 possible transitions functions. In this example we will show 3: A -> B, A -> A, B -> A. A is the starting state and the final state. The encoding for this transitions are set and shown below as DNA. It is important to know that all transitions begin with GGATG because this sequence triggers FokI into action.`;
+	h4.innerText = `The FSM has 8 possible transitions functions. In this example we will show 3: A -> B, A -> A, B -> A. A is the starting state and the final state. The encoding for these transitions are set and are shown below as DNA. It is important to know that all transitions begin with GGATG because this sequence triggers FokI into action.`;
 }
 
 function draw_two_state_canvas(){
