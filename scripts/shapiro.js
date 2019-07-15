@@ -104,13 +104,13 @@ function init_cutting(){
 }
 
 function mark_accepted(){
-	let circle = document.getElementsByClassName("circle")[0];
+	let circle = document.getElementsByClassName("circle")[1];
 	circle.classList.add("select");
 	circle.style.background_color = "#5ad47a";
 }
 
 function mark_rejected(){
-	let circle = document.getElementsByClassName("circle")[1];
+	let circle = document.getElementsByClassName("circle")[0];
 	circle.classList.add("select");
 	circle.style.background_color = "#d14f5a";
 }
@@ -146,7 +146,6 @@ function draw_fokl_enzyme(words){
 	let ctx = canvas.getContext("2d");
 	let iter = 0;
 	let width = SIZE * 5;
-	ctx.fillStyle = "#56d6c3";
 	for(let word of words){
 		let x = 20;
 		let y = (words.length  == 1 ? canvas.height / 2 : canvas.height / 3) - 10 - SIZE; 
@@ -156,8 +155,24 @@ function draw_fokl_enzyme(words){
 		else{
 			iter++;
 		}
+		ctx.fillStyle = "#56d6c3";
 		ctx.fillRect(x, y, width, SIZE);
+		ctx.beginPath();
+		ctx.moveTo(x,y)
+		ctx.lineTo(x + SIZE * 9, y);
+		canvas_arrow(ctx, x + SIZE * 9, y, x + SIZE * 9, y + SIZE);
+		ctx.stroke();
+
 		ctx.fillRect(x, y + (SIZE * 3) + (10 * 2), width, SIZE);
+		ctx.beginPath();
+		ctx.moveTo(x, y + (SIZE * 4) + (10 * 2))
+		ctx.lineTo(x + SIZE * 13, y + (SIZE * 4) + (10 * 2));
+		canvas_arrow(ctx, x + SIZE * 13, y + (SIZE * 4) + (10 * 2), x + SIZE * 13, y + (SIZE * 3) + (10 * 2) );
+		ctx.stroke();
+
+		ctx.fillStyle = "#626ed9";
+		ctx.fillText("FokI", x + 5 , y + SIZE - 5);
+		ctx.fillText("FokI", x + 5 , y + (SIZE * 3) + (10 * 2) + SIZE - 5);
 	}
 }
 
