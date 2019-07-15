@@ -131,17 +131,34 @@ function start_cutting(){
 
 	// Draw the combined words
 	draw_combined_words(temp_words);
-	result = "rejected";
-	return; // TEST
 
 	// Draw the FokI enxyme and the locations of its cut
 	draw_fokl_enzyme(temp_words);
+	result = "rejected";
+	return; // TEST
 
 	// Display the new cut input string
 }
 
 function draw_fokl_enzyme(words){
 	// Draw block below
+	let canvas = document.getElementById("two_state_3");
+	let ctx = canvas.getContext("2d");
+	let iter = 0;
+	let width = SIZE * 5;
+	ctx.fillStyle = "#56d6c3";
+	for(let word of words){
+		let x = 20;
+		let y = (words.length  == 1 ? canvas.height / 2 : canvas.height / 3) - 10 - SIZE; 
+		if(iter == 1){
+			y += 150;
+		}
+		else{
+			iter++;
+		}
+		ctx.fillRect(x, y, width, SIZE);
+		ctx.fillRect(x, y + (SIZE * 3) + (10 * 2), width, SIZE);
+	}
 }
 
 function get_combined_words(){
@@ -172,7 +189,7 @@ function draw_combined_words(words){
 		let x = 20;
 		let y = (words.length  == 1 ? canvas.height / 2 : canvas.height / 3); 
 		if(iter == 1){
-			y += 50;
+			y += 150;
 		}
 		else{
 			iter++;
@@ -208,10 +225,6 @@ function evaluate_state(){
 
 function set_transition(){
 	let relavent = top_row.slice(0, 4).join("");
-	top_row.shift();
-	top_row.shift();
-	top_row.shift();
-	top_row.shift();
 	switch(relavent){
 		case "CAGG":
 			current_transition = 'b';
